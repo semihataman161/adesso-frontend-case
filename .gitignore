@@ -72,6 +72,7 @@ docker-compose.local.yml
 /tmp
 /out-tsc
 *.tsbuildinfo
+.lighthouseci
 
 # IDEs and editors
 /.idea
