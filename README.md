@@ -1,1 +1,0 @@
-# adesso-frontend-case
