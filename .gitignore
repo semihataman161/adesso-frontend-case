@@ -71,6 +71,7 @@ docker-compose.local.yml
 /dist
 /tmp
 /out-tsc
+*.tsbuildinfo
 
 # IDEs and editors
 /.idea

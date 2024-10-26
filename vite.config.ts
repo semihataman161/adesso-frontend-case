@@ -5,6 +5,13 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    rollupOptions: {
+      input: './src/main.ts'
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src")
