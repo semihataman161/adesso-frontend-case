@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, defineEmits } from "vue";
+import { ref, watch, defineEmits, computed } from "vue";
 import { ISelectedCost } from "../../types/CostFilter";
 
 const emit =
@@ -24,6 +24,8 @@ watch([isRangeActive, rangeValues], ([newIsRangeActive, newRangeValues]) => {
     value: newRangeValues,
   });
 });
+
+const formattedRangeValues = computed(() => rangeValues.value.join("-"));
 </script>
 
 <template>
@@ -43,7 +45,7 @@ watch([isRangeActive, rangeValues], ([newIsRangeActive, newRangeValues]) => {
       ></v-range-slider>
     </v-col>
     <v-col cols="12" md="3">
-      <p>{{ rangeValues }}</p>
+      <p>{{ formattedRangeValues }}</p>
     </v-col>
   </v-row>
 </template>
