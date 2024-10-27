@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import BaseImage from "../components/UI/BaseImage.vue";
-defineProps<{ msg: string }>();
 </script>
 
 <template>
