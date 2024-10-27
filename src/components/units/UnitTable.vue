@@ -28,7 +28,7 @@ function getFormattedCostValue(proxy: Proxy<object>): string {
     items-per-page="5"
     height="300px"
   >
-    <template v-slot:item.cost="{ value }">
+    <template v-slot:[`item.cost`]="{ value }">
       {{ getFormattedCostValue(value) }}
     </template>
   </v-data-table>

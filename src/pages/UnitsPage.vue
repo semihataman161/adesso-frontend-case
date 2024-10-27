@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, watch } from "vue";
+import { reactive } from "vue";
 import jsonData from "../data/age-of-empires-units.json";
 import AgeFilter from "../components/units/AgeFilter.vue";
 import CostFilter from "../components/units/CostFilter.vue";
