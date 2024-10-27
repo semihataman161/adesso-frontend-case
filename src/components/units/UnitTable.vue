@@ -13,7 +13,7 @@ const headers = [
   { title: "cost", value: "cost", sortable: true },
 ];
 
-function getFormattedCostValue(proxy: Proxy<object>): string {
+function getFormattedCostValue(proxy: object): string {
   const obj = { ...proxy };
   const entries = Object.entries(obj).map(([key, value]) => `${key}: ${value}`);
   return entries.join(", ");
