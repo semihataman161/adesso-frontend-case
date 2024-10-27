@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -10,15 +10,23 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: './src/main.ts'
-    }
+      input: "./src/main.ts",
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+        silenceDeprecations: ["legacy-js-api"],
+      },
+    },
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src")
-    }
-  }
-})
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
+});
