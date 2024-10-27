@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
+  { path: "/", redirect: "/home" },
   {
     path: "/home",
-    component: () => import(/* webpackChunkName: "home" */ "./pages/HomePage.vue"),
+    component: () =>
+      import(/* webpackChunkName: "home" */ "./pages/HomePage.vue"),
   },
   {
     path: "/units",
@@ -13,7 +15,14 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/unit-detail",
     component: () =>
-      import(/* webpackChunkName: "unit-details" */ "./pages/UnitDetailPage.vue"),
+      import(
+        /* webpackChunkName: "unit-details" */ "./pages/UnitDetailPage.vue"
+      ),
+  },
+  {
+    path: "/:notFound(.*)",
+    component: () =>
+      import(/* webpackChunkName: "not-found" */ "./pages/NotFound.vue"),
   },
 ];
 
