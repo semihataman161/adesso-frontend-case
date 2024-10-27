@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SelectableRange from "./SelectableRange.vue";
-import { ISelectedCost } from "../../types/CostFilter";
+import type { ISelectedCost } from "../../types/CostFilter";
 import { defineEmits, reactive } from "vue";
 
 const emit =

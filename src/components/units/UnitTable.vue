@@ -10,7 +10,7 @@ const headers = [
   { title: "id", value: "id", sortable: true },
   { title: "name", value: "name", sortable: true },
   { title: "age", value: "age", sortable: true },
-  { title: "cost", value: "cost", sortable: true },
+  { title: "cost", value: "cost", sortable: false },
 ];
 
 function getFormattedCostValue(proxy: object): string {
