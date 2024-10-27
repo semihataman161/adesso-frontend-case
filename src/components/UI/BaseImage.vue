@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="base-image">
     <slot name="image" class="base-image__image"></slot>
