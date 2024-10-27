@@ -3,12 +3,14 @@ import TheNavigation from "./components/nav/TheNavigation.vue";
 </script>
 
 <template>
-  <div class="layout">
-    <the-navigation class="layout__navigation"></the-navigation>
-    <main class="layout__main">
-      <router-view class="layout__content"></router-view>
-    </main>
-  </div>
+  <v-app>
+    <div class="layout">
+      <the-navigation class="layout__navigation"></the-navigation>
+      <main class="layout__main">
+        <router-view class="layout__content"></router-view>
+      </main>
+    </div>
+  </v-app>
 </template>
 
 <style lang="scss">
