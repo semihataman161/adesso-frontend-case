@@ -22,7 +22,7 @@ function getFormattedCostValue(proxy: object): string {
   const entries = Object.entries(obj).map(([key, value]) => `${key}: ${value}`);
   return entries.join(", ");
 }
-/* eslint-disable  @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleRowClick = async (event: any, row: any) => {
   await router.push(`units/${row.item.id}`);
 };

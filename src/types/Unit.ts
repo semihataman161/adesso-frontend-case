@@ -4,9 +4,10 @@ export interface ISelectedCost {
   value: number[];
 }
 
-/* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface IUnitsState {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   allTableData: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   filteredTableData: any[];
   selectedAge: string;
   selectedCosts: ISelectedCost[];
