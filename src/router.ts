@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
       import(/* webpackChunkName: "units" */ "./pages/UnitsPage.vue"),
   },
   {
-    path: "/unit-detail",
+    path: "/units/:id",
     component: () =>
       import(
         /* webpackChunkName: "unit-details" */ "./pages/UnitDetailPage.vue"
