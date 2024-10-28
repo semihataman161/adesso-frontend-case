@@ -1,30 +1,31 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, watch } from "vue";
 import jsonData from "../data/age-of-empires-units.json";
 import AgeFilter from "../components/units/AgeFilter.vue";
 import CostFilter from "../components/units/CostFilter.vue";
 import UnitTable from "../components/units/UnitTable.vue";
-import { ISelectedCost } from "../types/CostFilter";
+import type { ISelectedCost } from "../types/CostFilter";
+import { filterUnits } from "../utils/filtering";
 
 const allTableState = reactive({ data: jsonData.units });
 const filteredTableState = reactive({ data: allTableState.data });
+const selectedAge = reactive({ value: "All" });
+const selectedCosts = reactive<ISelectedCost[]>([]);
 
-const handleAgeFilterChange = (selectedAge: string) => {
-  if (selectedAge === "All") {
-    filteredTableState.data = allTableState.data;
-  } else {
-    filteredTableState.data = allTableState.data.filter(
-      (element) => element.age === selectedAge
-    );
-  }
+watch([selectedAge, selectedCosts], () => {
+  filteredTableState.data = filterUnits(
+    allTableState.data,
+    selectedAge.value,
+    selectedCosts
+  );
+});
+
+const handleAgeFilterChange = (age: string) => {
+  selectedAge.value = age;
 };
 
-const handleCostFilterChange = (selectedCosts: ISelectedCost[]) => {
-  if (selectedCosts.length === 0) {
-    filteredTableState.data = allTableState.data;
-  } else {
-    // TODO: Implement logic here
-  }
+const handleCostFilterChange = (costs: ISelectedCost[]) => {
+  selectedCosts.splice(0, selectedCosts.length, ...costs);
 };
 </script>
 
