@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, computed } from "vue";
-import type { ISelectedCost } from "../../types/CostFilter";
+import type { ISelectedCost } from "@/types/Unit";
 
 const emit =
   defineEmits<
