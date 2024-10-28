@@ -1,14 +1,10 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 
 const router = useRouter();
-
-const props = defineProps({
-  tableData: {
-    type: Array,
-    required: true,
-  },
-});
+const store = useStore();
 
 const headers = [
   { title: "id", value: "id", sortable: true },
@@ -16,6 +12,10 @@ const headers = [
   { title: "age", value: "age", sortable: true },
   { title: "cost", value: "cost", sortable: false },
 ];
+
+const filteredTableData = computed(
+  () => store.getters["units/filteredTableData"]
+);
 
 function getFormattedCostValue(proxy: object): string {
   const obj = { ...proxy };
@@ -31,7 +31,7 @@ const handleRowClick = async (event: any, row: any) => {
 <template>
   <v-data-table
     :headers="headers"
-    :items="props.tableData"
+    :items="filteredTableData"
     item-key="id"
     items-per-page="5"
     height="300px"
