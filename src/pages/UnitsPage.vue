@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive, watch } from "vue";
 import jsonData from "../data/age-of-empires-units.json";
+import BaseCard from "../components/UI/BaseCard.vue";
 import AgeFilter from "../components/units/AgeFilter.vue";
 import CostFilter from "../components/units/CostFilter.vue";
 import UnitTable from "../components/units/UnitTable.vue";
@@ -31,11 +32,23 @@ const handleCostFilterChange = (costs: ISelectedCost[]) => {
 
 <template>
   <!-- Age Filter -->
-  <age-filter @update:selectedAge="handleAgeFilterChange"></age-filter>
+  <base-card class="base-card">
+    <age-filter @update:selectedAge="handleAgeFilterChange" />
+  </base-card>
 
   <!-- Cost Filter -->
-  <cost-filter @update:selectedCost="handleCostFilterChange"></cost-filter>
+  <base-card class="base-card">
+    <cost-filter @update:selectedCost="handleCostFilterChange" />
+  </base-card>
 
   <!-- Table -->
-  <unit-table :table-data="filteredTableState.data"></unit-table>
+  <base-card class="base-card">
+    <unit-table :table-data="filteredTableState.data" />
+  </base-card>
 </template>
+
+<style lang="scss" scoped>
+.base-card {
+  margin: 1rem 0;
+}
+</style>
