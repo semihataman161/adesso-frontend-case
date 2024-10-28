@@ -21,10 +21,24 @@ watch(selectedAgeId, (newId) => {
 </script>
 
 <template>
-  <p>Ages</p>
-  <v-tabs v-model="selectedAgeId">
-    <v-tab v-for="ageFilter in ageFilters" :key="ageFilter.id">
-      {{ ageFilter.label }}
-    </v-tab>
-  </v-tabs>
+  <div class="age-selector">
+    <p class="age-selector__title">Ages</p>
+    <v-tabs v-model="selectedAgeId" class="age-selector__tabs">
+      <v-tab
+        v-for="ageFilter in ageFilters"
+        :key="ageFilter.id"
+        class="age-selector__tab"
+      >
+        {{ ageFilter.label }}
+      </v-tab>
+    </v-tabs>
+  </div>
 </template>
+
+<style scoped lang="scss">
+.age-selector {
+  &__title {
+    margin-bottom: 10px;
+  }
+}
+</style>
