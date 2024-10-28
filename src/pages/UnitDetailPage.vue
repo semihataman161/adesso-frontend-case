@@ -38,7 +38,7 @@ const unitData = computed(() => {
   <v-container class="unit-details">
     <v-row class="unit-details__row">
       <v-col cols="12" md="8" lg="6" class="unit-details__col">
-        <UnitDetailDisplay :unitData="unitData" />
+        <unit-detail-display :unitData="unitData" />
       </v-col>
     </v-row>
   </v-container>

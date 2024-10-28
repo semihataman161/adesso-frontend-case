@@ -11,7 +11,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <BaseCard>
+  <base-card>
     <ul v-if="unitData.length > 0" class="unit-details__list">
       <li
         v-for="(item, index) in props.unitData"
@@ -24,7 +24,7 @@ const props = defineProps<{
         </p>
       </li>
     </ul>
-  </BaseCard>
+  </base-card>
 </template>
 
 <style scoped lang="scss">
