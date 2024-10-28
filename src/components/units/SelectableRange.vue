@@ -25,7 +25,9 @@ watch([isRangeActive, rangeValues], ([newIsRangeActive, newRangeValues]) => {
   });
 });
 
-const formattedRangeValues = computed(() => rangeValues.value.join("-"));
+const formattedRangeValues = computed(() => {
+  return isRangeActive.value ? rangeValues.value.join("-") : "-";
+});
 </script>
 
 <template>
