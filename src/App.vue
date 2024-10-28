@@ -7,7 +7,7 @@ import TheNavigation from "./components/nav/TheNavigation.vue";
     <div class="layout">
       <the-navigation class="layout__navigation"></the-navigation>
       <main class="layout__main">
-        <router-view class="layout__content"></router-view>
+        <router-view></router-view>
       </main>
     </div>
   </v-app>
