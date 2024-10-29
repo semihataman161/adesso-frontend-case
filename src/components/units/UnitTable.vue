@@ -44,6 +44,7 @@ const handleRowClick = async (event: any, row: any) => {
   <v-data-table
     :headers="headers"
     :items="filteredTableData"
+    :hover="true"
     item-key="id"
     items-per-page="5"
     height="300px"
