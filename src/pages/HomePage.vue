@@ -10,8 +10,10 @@ import BaseCard from "@/components/UI/BaseCard.vue";
     <v-row class="home__row d-flex justify-center align-center">
       <v-col
         cols="12"
+        xs="10"
         sm="8"
         md="6"
+        lg="4"
         class="home__col d-flex justify-center align-center"
       >
         <base-card>
@@ -30,13 +32,14 @@ import BaseCard from "@/components/UI/BaseCard.vue";
 <style lang="scss" scoped>
 .home {
   &--full-height {
-    height: 100vh;
+    height: 90vh;
   }
 
   &__row {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
   }
 
   &__col {
@@ -48,6 +51,9 @@ import BaseCard from "@/components/UI/BaseCard.vue";
   &__image {
     cursor: pointer;
     transition: opacity 0.3s ease;
+    max-width: 100%;
+    width: auto;
+    height: auto;
 
     &:hover {
       opacity: 0.7;
