@@ -1,4 +1,4 @@
-import type { ISelectedCost } from '@/types/Unit';
+import type { ISelectedCost } from "@/types/Unit";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const filterByAge = (data: any[], selectedAge: string) => {
@@ -35,12 +35,7 @@ export const filterByCost = (data: any[], selectedCosts: ISelectedCost[]) => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const filterByAgeAndCost = (data: any[], selectedAge: string, selectedCosts: ISelectedCost[]) => {
-  try {
-    let filteredData = filterByAge(data, selectedAge);
-    filteredData = filterByCost(filteredData, selectedCosts);
-    return filteredData;
-  } catch (error) {
-    console.error("Error filtering by age and cost:", error);
-    return data;
-  }
+  let filteredData = filterByAge(data, selectedAge);
+  filteredData = filterByCost(filteredData, selectedCosts);
+  return filteredData;
 };
