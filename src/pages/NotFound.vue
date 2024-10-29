@@ -2,7 +2,7 @@
   <v-container class="page-not-found" fluid fill-height>
     <v-row
       class="page-not-found__row d-flex align-center justify-center"
-      style="height: 100vh"
+      style="height: 90vh"
     >
       <v-col cols="12" class="page-not-found__col">
         <h2 class="page-not-found__message">
