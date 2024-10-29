@@ -18,13 +18,25 @@ const filteredTableData = computed(
 );
 
 function getFormattedCostValue(proxy: object): string {
-  const obj = { ...proxy };
-  const entries = Object.entries(obj).map(([key, value]) => `${key}: ${value}`);
-  return entries.join(", ");
+  try {
+    const obj = { ...proxy };
+    const entries = Object.entries(obj).map(
+      ([key, value]) => `${key}: ${value}`
+    );
+    return entries.join(", ");
+  } catch (error) {
+    console.error("Error formatting cost value:", error);
+    return "Error formatting cost value.";
+  }
 }
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleRowClick = async (event: any, row: any) => {
-  await router.push(`units/${row.item.id}`);
+  try {
+    await router.push(`units/${row.item.id}`);
+  } catch (error) {
+    console.error("Navigation error:", error);
+  }
 };
 </script>
 

@@ -13,25 +13,36 @@ const selectedCosts = reactive<{ data: ISelectedCost[] }>({
   data: [],
 });
 
-const handleSelectedFilterChange = (selectedCost: ISelectedCost) => {
-  const foundIndex = selectedCosts.data.findIndex(
-    (item) => item.name === selectedCost.name
-  );
+const updateSelectedCost = (selectedCost: ISelectedCost) => {
+  try {
+    const foundIndex = selectedCosts.data.findIndex(
+      (item) => item.name === selectedCost.name
+    );
 
-  if (foundIndex !== -1) {
-    if (!selectedCost.isActive) {
-      selectedCosts.data.splice(foundIndex, 1);
+    if (foundIndex !== -1) {
+      if (!selectedCost.isActive) {
+        selectedCosts.data.splice(foundIndex, 1);
+      } else {
+        selectedCosts.data[foundIndex] = {
+          ...selectedCosts.data[foundIndex],
+          ...selectedCost,
+        };
+      }
     } else {
-      selectedCosts.data[foundIndex] = {
-        ...selectedCosts.data[foundIndex],
-        ...selectedCost,
-      };
+      selectedCosts.data.push(selectedCost);
     }
-  } else {
-    selectedCosts.data.push(selectedCost);
+  } catch (error) {
+    console.error("Error updating selected cost:", error);
   }
+};
 
-  emit("update:selectedCost", selectedCosts.data);
+const handleSelectedFilterChange = (selectedCost: ISelectedCost) => {
+  try {
+    updateSelectedCost(selectedCost);
+    emit("update:selectedCost", selectedCosts.data);
+  } catch (error) {
+    console.error("Error updating selected costs:", error);
+  }
 };
 </script>
 
