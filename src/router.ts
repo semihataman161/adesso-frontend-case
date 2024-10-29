@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/:notFound(.*)",
     component: () =>
-      import(/* webpackChunkName: "not-found" */ "./pages/NotFound.vue"),
+      import(/* webpackChunkName: "not-found" */ "./pages/PageNotFound.vue"),
   },
 ];
 

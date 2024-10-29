@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import BaseCard from "@/components/UI/BaseCard.vue";
+import { ref } from "vue";
+
+const isHovered = ref(false);
 </script>
 
 <template>
@@ -19,7 +22,9 @@ import BaseCard from "@/components/UI/BaseCard.vue";
         <base-card>
           <img
             loading="lazy"
-            class="home__image"
+            :class="['home__image', { 'home__image--hovered': isHovered }]"
+            @mouseover="isHovered = true"
+            @mouseleave="isHovered = false"
             src="@/assets/age-of-empires.webp"
             alt="Age of Empires"
           />
@@ -55,7 +60,7 @@ import BaseCard from "@/components/UI/BaseCard.vue";
     width: auto;
     height: auto;
 
-    &:hover {
+    &--hovered {
       opacity: 0.7;
     }
   }

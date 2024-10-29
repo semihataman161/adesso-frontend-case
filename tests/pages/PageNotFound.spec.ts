@@ -1,4 +1,3 @@
-// PageNotFound.spec.js
 import { mount } from "@vue/test-utils";
 import { createVuetify } from "vuetify";
 import PageNotFound from "@/pages/PageNotFound.vue";
