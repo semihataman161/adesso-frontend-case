@@ -12,15 +12,20 @@ const props = defineProps<{
 
 <template>
   <base-card>
-    <ul v-if="unitData.length > 0" class="unit-details__list">
+    <ul
+      v-if="unitData.length > 0"
+      class="unit-details__list"
+      data-testid="unit-details-list"
+    >
       <li
         v-for="(item, index) in props.unitData"
         :key="index"
         class="unit-details__item"
+        data-testid="unit-details-item"
       >
         <p class="unit-details__text">
           <strong class="unit-details__label">{{ item.label }}:</strong>
-          {{ item.value || "-" }}
+          <span data-testid="unit-details-value">{{ item.value || "-" }}</span>
         </p>
       </li>
     </ul>
