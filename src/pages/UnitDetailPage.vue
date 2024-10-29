@@ -37,7 +37,7 @@ const unitData = computed(() => {
 <template>
   <v-container class="unit-details">
     <v-row class="unit-details__row">
-      <v-col cols="12" md="8" lg="6" class="unit-details__col">
+      <v-col cols="12" sm="10" md="8" lg="6" xl="4" class="unit-details__col">
         <unit-detail-display :unitData="unitData" />
       </v-col>
     </v-row>
@@ -50,15 +50,27 @@ const unitData = computed(() => {
   align-items: center;
   justify-content: center;
   min-height: 90vh;
+  padding: 1rem;
 
   &__row {
     text-align: center;
     justify-content: center;
+    margin: 0;
+
+    @media (max-width: 600px) {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   &__col {
-    max-width: 600px;
+    max-width: 100%;
+    padding: 1rem;
     margin: 0 auto;
+
+    @media (max-width: 600px) {
+      padding: 0.5rem;
+    }
   }
 }
 </style>
