@@ -31,20 +31,20 @@ const props = defineProps<{
 .unit-details__list {
   list-style-type: none;
   padding-left: 0;
-}
 
-.unit-details__item {
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-}
+  .unit-details__item {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
 
-.unit-details__text {
-  margin: 0;
-}
+    .unit-details__text {
+      margin: 0;
 
-.unit-details__label {
-  font-weight: bold;
+      .unit-details__label {
+        font-weight: bold;
+      }
+    }
+  }
 }
 </style>
