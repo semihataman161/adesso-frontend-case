@@ -13,6 +13,12 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
+    setupFiles: "vuetify.config.js",
+    server: {
+      deps: {
+        inline: ["vuetify"],
+      },
+    },
   },
   css: {
     preprocessorOptions: {
