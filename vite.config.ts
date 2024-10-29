@@ -10,13 +10,6 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vuetify({ autoImport: true, styles: "sass" })],
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
-    rollupOptions: {
-      input: "./src/main.ts",
-    },
-  },
   css: {
     preprocessorOptions: {
       scss: {
