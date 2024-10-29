@@ -13,25 +13,17 @@ const selectedAge = computed(() => store.state.units.selectedAge);
 const selectedCosts = computed(() => store.state.units.selectedCosts);
 
 const handleAgeFilterChange = (age: string) => {
-  try {
-    store.dispatch("units/applyFilters", {
-      selectedAge: age,
-      selectedCosts: selectedCosts.value,
-    });
-  } catch (error) {
-    console.error("Error applying age filter:", error);
-  }
+  store.dispatch("units/applyFilters", {
+    selectedAge: age,
+    selectedCosts: selectedCosts.value,
+  });
 };
 
 const handleCostFilterChange = (costs: ISelectedCost[]) => {
-  try {
-    store.dispatch("units/applyFilters", {
-      selectedAge: selectedAge.value,
-      selectedCosts: costs,
-    });
-  } catch (error) {
-    console.error("Error applying cost filter:", error);
-  }
+  store.dispatch("units/applyFilters", {
+    selectedAge: selectedAge.value,
+    selectedCosts: costs,
+  });
 };
 
 onBeforeUnmount(() => {
