@@ -46,12 +46,12 @@ describe("UnitDetailPage.vue", () => {
         },
       ],
     });
-
-    await router.push("/unit/1");
-    await router.isReady();
   });
 
-  it("renders unit details correctly", async () => {
+  it("renders unit details correctly when unit data is available", async () => {
+    await router.push("/unit/1");
+    await router.isReady();
+
     const wrapper = mount(UnitDetailPage, {
       global: {
         plugins: [store, router, vuetify],
@@ -79,5 +79,22 @@ describe("UnitDetailPage.vue", () => {
     ];
 
     expect(unitDetailDisplay.props("unitData")).toEqual(expectedUnitData);
+  });
+
+  it("renders empty unit data when no unit is found", async () => {
+    await router.push("/unit/999");
+    await router.isReady();
+
+    const wrapper = mount(UnitDetailPage, {
+      global: {
+        plugins: [store, router, vuetify],
+      },
+    });
+
+    await nextTick();
+
+    const unitDetailDisplay = wrapper.findComponent(UnitDetailDisplay);
+    expect(unitDetailDisplay.exists()).toBe(true);
+    expect(unitDetailDisplay.props("unitData")).toEqual([]);
   });
 });
