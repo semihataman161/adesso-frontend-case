@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onBeforeUnmount } from "vue";
 import { useStore } from "vuex";
 import type { ISelectedCost } from "@/types/Unit";
 import BaseCard from "@/components/UI/BaseCard.vue";
@@ -33,6 +33,13 @@ const handleCostFilterChange = (costs: ISelectedCost[]) => {
     console.error("Error applying cost filter:", error);
   }
 };
+
+onBeforeUnmount(() => {
+  store.dispatch("units/applyFilters", {
+    selectedAge: "All",
+    selectedCosts: [],
+  });
+});
 </script>
 
 <template>
