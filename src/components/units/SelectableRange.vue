@@ -32,10 +32,14 @@ const formattedRangeValues = computed(() =>
 
 <template>
   <v-row>
-    <v-col cols="12" md="3">
-      <v-checkbox v-model="isRangeActive" :label="props.name"></v-checkbox>
+    <v-col cols="12" sm="4" md="3" xl="2" class="pl-1">
+      <v-checkbox
+        hide-details
+        v-model="isRangeActive"
+        :label="props.name"
+      ></v-checkbox>
     </v-col>
-    <v-col cols="12" md="6">
+    <v-col cols="12" sm="6" md="3" xl="3" class="mt-3">
       <v-range-slider
         v-model="rangeValues"
         :max="200"
@@ -46,7 +50,7 @@ const formattedRangeValues = computed(() =>
         hide-details
       ></v-range-slider>
     </v-col>
-    <v-col cols="12" md="3">
+    <v-col cols="12" sm="2" md="2" xl="2" class="mt-4">
       <p>{{ formattedRangeValues }}</p>
     </v-col>
   </v-row>

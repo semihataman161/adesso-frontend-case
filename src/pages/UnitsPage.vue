@@ -56,13 +56,20 @@ const handleCostFilterChange = (costs: ISelectedCost[]) => {
 
   &__card {
     margin: 1rem 0;
-    width: 50%;
+    width: 90%;
+    max-width: 900px;
+
+    @media (min-width: 768px) {
+      width: 70%;
+    }
+
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
   }
 
-  &__age,
-  &__cost,
-  &__table {
-    width: 100%;
+  @media (min-width: 768px) {
+    margin-top: 4rem;
   }
 }
 </style>
