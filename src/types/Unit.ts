@@ -12,3 +12,8 @@ export interface IUnitsState {
   selectedAge: string;
   selectedCosts: ISelectedCost[];
 }
+
+export interface IUnitDetail {
+  label: string;
+  value: string | number | null;
+}

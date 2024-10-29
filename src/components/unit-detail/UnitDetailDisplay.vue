@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import BaseCard from "@/components/UI/BaseCard.vue";
-interface UnitDetail {
-  label: string;
-  value: string | number | null;
-}
+import type { IUnitDetail } from "@/types/Unit";
 
 const props = defineProps<{
-  unitData: UnitDetail[];
+  unitData: IUnitDetail[];
 }>();
 </script>
 
@@ -24,7 +21,7 @@ const props = defineProps<{
         data-testid="unit-details-item"
       >
         <p class="unit-details__text">
-          <strong class="unit-details__label">{{ item.label }}:</strong>
+          <strong class="unit-details__label">{{ item.label }}: </strong>
           <span data-testid="unit-details-value">{{ item.value || "-" }}</span>
         </p>
       </li>
