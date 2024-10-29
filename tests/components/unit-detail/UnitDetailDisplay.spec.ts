@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import { describe, it, expect } from "vitest";
 import UnitDetailDisplay from "@/components/unit-detail/UnitDetailDisplay.vue";
 
-describe("UnitDetails.vue", () => {
+describe("UnitDetailDisplay.vue", () => {
   const unitData = [
     { label: "Length", value: 100 },
     { label: "Width", value: null },

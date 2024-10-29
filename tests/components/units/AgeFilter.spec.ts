@@ -8,7 +8,7 @@ import { nextTick } from "vue";
 const vuetify = createVuetify();
 global.ResizeObserver = ResizeObserver;
 
-describe("AgeFilter", () => {
+describe("AgeFilter.vue", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let wrapper: any;
 

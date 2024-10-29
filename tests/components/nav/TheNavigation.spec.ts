@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import { describe, it, expect } from "vitest";
 import TheNavigation from "@/components/nav/TheNavigation.vue";
 
-describe("Header.vue", () => {
+describe("TheNavigation.vue", () => {
   it("renders the header and menu items correctly", () => {
     const wrapper = mount(TheNavigation);
     expect(wrapper.exists()).toBe(true);

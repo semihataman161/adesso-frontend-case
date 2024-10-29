@@ -9,7 +9,7 @@ import ResizeObserver from "resize-observer-polyfill";
 const vuetify = createVuetify();
 global.ResizeObserver = ResizeObserver;
 
-describe("UnitTable", () => {
+describe("UnitTable.vue", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let store: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -6,7 +6,7 @@ import BaseCard from "@/components/UI/BaseCard.vue";
 
 const vuetify = createVuetify();
 
-describe("HomePage", () => {
+describe("HomePage.vue", () => {
   it("renders correctly", () => {
     const wrapper = mount(HomePage, {
       global: {
